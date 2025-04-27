@@ -64,82 +64,82 @@ export const SCALEFACTOR_BANDS = [
     // 96000
     num_swb_long_window: 41,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 12,
+    num_swb_short_window: 12,
     swb_offset_short_window: [],
   },
   {
     // 88200
     num_swb_long_window: 41,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 12,
+    num_swb_short_window: 12,
     swb_offset_short_window: [],
   },
   {
     // 64000
     num_swb_long_window: 47,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 12,
+    num_swb_short_window: 12,
     swb_offset_short_window: [],
   },
   { // 48000 (OK)
     num_swb_long_window: 49,
     swb_offset_long_window: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64, 72, 80, 88, 96, 108, 120, 132, 144, 160, 176, 196, 216, 240, 264, 292, 320, 352, 384, 416, 448, 480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800, 832, 864, 896, 928, 1024],
-    num_swb_short_winodw: 14,
+    num_swb_short_window: 14,
     swb_offset_short_window: [0, 4, 8, 12, 16, 20, 28, 36, 44, 56, 68, 80, 96, 112, 128],
   },
   { // 44100 (OK)
     num_swb_long_window: 49,
     swb_offset_long_window: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64, 72, 80, 88, 96, 108, 120, 132, 144, 160, 176, 196, 216, 240, 264, 292, 320, 352, 384, 416, 448, 480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800, 832, 864, 896, 928, 1024],
-    num_swb_short_winodw: 14,
+    num_swb_short_window: 14,
     swb_offset_short_window: [0, 4, 8, 12, 16, 20, 28, 36, 44, 56, 68, 80, 96, 112, 128],
   },
   {
     // 32000
     num_swb_long_window: 51,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 14,
+    num_swb_short_window: 14,
     swb_offset_short_window: [],
   },
   {
     // 24000
     num_swb_long_window: 47,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 15,
+    num_swb_short_window: 15,
     swb_offset_short_window: [],
   },
   {
     // 22050
     num_swb_long_window: 47,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 15,
+    num_swb_short_window: 15,
     swb_offset_short_window: [],
   },
   {
     // 16000
     num_swb_long_window: 43,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 15,
+    num_swb_short_window: 15,
     swb_offset_short_window: [],
   },
   {
     // 12000
     num_swb_long_window: 43,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 15,
+    num_swb_short_window: 15,
     swb_offset_short_window: [],
   },
   {
     // 11025
     num_swb_long_window: 43,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 15,
+    num_swb_short_window: 15,
     swb_offset_short_window: [],
   },
   {
     // 8000
     num_swb_long_window: 49,
     swb_offset_long_window: [],
-    num_swb_short_winodw: 15,
+    num_swb_short_window: 15,
     swb_offset_short_window: [],
   },
 ] as const;
