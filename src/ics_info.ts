@@ -20,6 +20,8 @@ export default class ICSInfo {
   readonly num_windows: number = 1;
   readonly num_window_groups: number = 1;
   readonly window_group_length: number[] = [1];
+  readonly num_swb: number;
+  readonly swb_offset: number[] = [];
   readonly sect_sfb_offset: number[][] = [];
 
   public constructor (frequency_index: number, stream: BitStream) {
@@ -52,6 +54,12 @@ export default class ICSInfo {
     // other widely used value definision
     this.num_windows = WINDOW_SEQUENCES_TO_NUM_WINDOWS[this.window_sequence];
     if (this.window_sequence === WINDOW_SEQUENCES.EIGHT_SHORT_SEQUENCE) {
+      this.num_swb = SCALEFACTOR_BANDS[frequency_index].num_swb_short_window;
+
+      for (let i = 0; i < SCALEFACTOR_BANDS[frequency_index].num_swb_short_window + 1; i++) {
+        this.swb_offset.push(SCALEFACTOR_BANDS[frequency_index].swb_offset_short_window[i]);
+      }
+
       for (let i = 0; i < 7; i++) {
         if ((this.scale_factor_grouping & (1 << (6 - i))) === 0) {
           this.num_window_groups += 1;
@@ -68,9 +76,11 @@ export default class ICSInfo {
         }
       }
     } else {
+      this.num_swb = SCALEFACTOR_BANDS[frequency_index].num_swb_long_window;
       this.sect_sfb_offset.push([]);
       for (let i = 0; i < this.max_sfb + 1; i++) {
         this.sect_sfb_offset[0].push(SCALEFACTOR_BANDS[frequency_index].swb_offset_long_window[i]);
+        this.swb_offset.push(SCALEFACTOR_BANDS[frequency_index].swb_offset_long_window[i]);
       }
     }
   }

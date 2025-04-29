@@ -12,6 +12,8 @@ import FillElement from './fill_element';
 import SingleChannelElement from './single_channel_element';
 import ChannelPairElement from './channel_pair_element';
 import { SIN_WINDOW, KBD_WINDOW } from './window_function';
+import LfeChannelElement from "./lfe_channel_element";
+import CouplingChannelElement from "./coupling_channel_element";
 
 export default class Decoder {
   private overlap: (number[] | null)[] = [null];
@@ -78,6 +80,18 @@ export default class Decoder {
           stream.consumeClear();
           break;
         }
+        case SyntaxticElementIdentification.ID_CCE: {
+          const cce = new CouplingChannelElement(frequency_index, stream);
+          stream.consumeClear();
+          break;
+        }
+        case SyntaxticElementIdentification.ID_LFE:
+          const lfe = new LfeChannelElement(frequency_index, stream);
+          stream.consumeClear();
+          break;
+        case SyntaxticElementIdentification.ID_DSE:
+          // TODO:
+          break;
         case SyntaxticElementIdentification.ID_PCE:
           const pce = new ProgramConfigElement(stream);
           stream.consumeClear();
