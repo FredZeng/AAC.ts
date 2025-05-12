@@ -17,13 +17,13 @@ export default class IndividualChannelStream {
   readonly gain_control_data?: GainControlData;
   readonly spectral_data: SpectralData;
 
-  public constructor(freqency_index: number, common_window: ICSInfo | null, stream: BitStream) {
+  public constructor(frequency_index: number, common_window: ICSInfo | null, stream: BitStream) {
     this.global_gain = stream.readBits(8);
     
     if (common_window != null) {
       this.ics_info = common_window;
     } else {
-      this.ics_info = new ICSInfo(freqency_index, stream);
+      this.ics_info = new ICSInfo(frequency_index, stream);
     }
     this.section_data = new SectionData(this.ics_info, stream);
     this.scale_factor_data = new ScalefactorData(this.global_gain, this.ics_info, this.section_data, stream);

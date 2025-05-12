@@ -1,13 +1,13 @@
-export const SyntaxticElementIdentification  = {
-  ID_SCE: 0x00,
-  ID_CPE: 0x01,
-  ID_CCE: 0x02,
-  ID_LFE: 0x03,
-  ID_DSE: 0x04,
-  ID_PCE: 0x05,
-  ID_FIL: 0x06,
-  ID_END: 0x07,
-} as const;
+export const enum SyntaxticElementIdentification {
+  ID_SCE = 0x00,
+  ID_CPE = 0x01,
+  ID_CCE = 0x02,
+  ID_LFE = 0x03,
+  ID_DSE = 0x04,
+  ID_PCE = 0x05,
+  ID_FIL = 0x06,
+  ID_END = 0x07,
+}
 
 export const TRANSFORM_WINDOWS = {
   LONG_WINDOW: { num_swb: 49, coeffs: 1024 },

@@ -55,7 +55,7 @@ export default class Decoder {
     let cpe1: ChannelPairElement | null = null;
 
     while (!stream.isEmpty()) {
-      const id_syn_ele = stream.readBits(3);
+      const id_syn_ele = stream.readBits(3) as SyntaxticElementIdentification;
       //console.log(stream.remains(), '/', frame_length, '=>', id_syn_ele)
       switch (id_syn_ele) {
         case SyntaxticElementIdentification.ID_SCE: {
@@ -105,8 +105,6 @@ export default class Decoder {
           break;
         default:
           throw new Error('Not implemented yet.')
-          stream.consumeClear();
-          break;
       }
       if (id_syn_ele === SyntaxticElementIdentification.ID_END) { break; }
     }

@@ -51,7 +51,7 @@ export default class ICSInfo {
       }
     }
 
-    // other widely used value definision
+    // other widely used value definition
     this.num_windows = WINDOW_SEQUENCES_TO_NUM_WINDOWS[this.window_sequence];
     if (this.window_sequence === WINDOW_SEQUENCES.EIGHT_SHORT_SEQUENCE) {
       this.num_swb = SCALEFACTOR_BANDS[frequency_index].num_swb_short_window;
